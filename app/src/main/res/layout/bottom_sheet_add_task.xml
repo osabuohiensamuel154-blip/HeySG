@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="32dp">
+
+        <!-- Drag handle -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/drag_handle" />
+
+        <!-- Sheet title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ New Task"
+            android:textSize="22sp"
+            android:textColor="#1C1C1E"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Task title input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="What needs to be done?"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="@color/primary"
+            app:hintTextColor="@color/primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:imeOptions="actionDone"
+                android:maxLines="2"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Quick templates -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="8dp"
+            android:text="⚡ Quick templates"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupTemplates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true" />
+
+        </HorizontalScrollView>
+
+        <!-- Category -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="📁 Category"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:singleSelection="true" />
+
+        </HorizontalScrollView>
+
+        <!-- Priority -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="🎯 Priority"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:textStyle="bold" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="↓ Low"
+                android:checkable="true"
+                app:chipBackgroundColor="@color/chip_low_bg"
+                app:checkedIconTint="@color/priority_low"
+                android:textColor="@color/priority_low" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→ Medium"
+                android:checkable="true"
+                app:chipBackgroundColor="@color/chip_medium_bg"
+                app:checkedIconTint="@color/priority_medium"
+                android:textColor="@color/priority_medium" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="↑ High"
+                android:checkable="true"
+                app:chipBackgroundColor="@color/chip_high_bg"
+                app:checkedIconTint="@color/priority_high"
+                android:textColor="@color/priority_high" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Add button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="Add Task"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="16dp"
+            app:elevation="4dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
